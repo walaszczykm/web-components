@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
+  <link rel="import" href="./hello-native.html">
+  <link rel="import" href="./hello-polymer.html">
   <title>Web Components</title>
 </head>
 <body>
@@ -13,20 +15,24 @@
 
     <section>
       <h2>Native API</h2>
+      <hello-native msg="Hello :)"> 
+      </hello-native>
 
     </section>
 
     <section>
       <h2>Polymer</h2>
-
+      <hello-polymer msg="Hello :)"></hello-polymer>
     </section>
 
     <section>
       <h2>X-Tag</h2>
+      <hello-xtag></hello-xtag>
 
     </section>
   </div>
 
   <script src="../bower_components/x-tag-core/dist/x-tag-core.min.js"></script>
+  <script src="./hello-xtag.js"></script>
 </body>
 </html>

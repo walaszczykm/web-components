@@ -1,0 +1,31 @@
+<template>
+  <slot name="title"></slot>
+  <h3>Hello Native Component</h3>
+  <p id="output"></p>
+  <input id="input" type="text">
+  <button>click me</button>
+</template>
+<script>
+  const template = document.currentScript.ownerDocument.querySelector('template')
+  class HelloNative extends HTMLElement {
+    constructor(){
+      super()
+
+      this.attachShadow({mode: 'open'})
+      this.shadowRoot.appendChild(document.importNode(template.content, true))
+
+      this.output = this.shadowRoot.querySelector('#output')
+      this.input = this.shadowRoot.querySelector('#input')
+
+      this.shadowRoot.querySelector('button').addEventListener('click', event => {
+        this.output.textContent = this.input.value
+      })
+    }
+
+    connectedCallback() {
+      this.output.textContent = this.getAttribute('msg')
+    }
+  }
+
+  customElements.define('hello-native', HelloNative)
+</script>

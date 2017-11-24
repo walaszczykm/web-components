@@ -1,0 +1,35 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<dom-module id="hello-polymer">
+  <template>
+    <h3>Hello Polymer</h3>
+    <p id="output">{{msg}}</p>
+    <input on-change="inputChanged" type="text">
+    <button on-click="onBtnClicked">click me</button>
+  </template>
+  <script>
+    class HelloPolymer extends Polymer.Element {
+      static get is() { return 'hello-polymer' }
+      static get properties() {
+        return {
+          msg: String
+        }
+      }
+
+      constructor(){
+        super()
+        this.inputValue = this.msg
+      }
+
+      onBtnClicked(){
+        this.setAttribute('msg', this.inputValue)
+      }
+
+      inputChanged(event){
+      this.inputValue = event.target.value
+      }
+    }
+
+    customElements.define(HelloPolymer.is, HelloPolymer)
+  </script>
+</dom-module>
