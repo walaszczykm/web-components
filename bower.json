@@ -1,0 +1,21 @@
+{
+  "name": "web-components",
+  "homepage": "https://github.com/walaszczykm/web-components",
+  "authors": [
+    "Maciej Walaszczyk <walaszczykm@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "latest",
+    "x-tag-core": "latest"
+  }
+}
